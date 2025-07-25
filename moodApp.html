@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoodTrack</title>
+
+    <style>
+
+        .main{
+            position: relative;;
+            width: 400px;
+            height: 600px;
+            background-color: #918d8d;
+            border-radius: 16px;
+            border: 2px solid #322525;
+            margin: 10% auto;
+            overflow: hidden;
+            /* pointer-events: none; */
+        }
+
+        h1{
+            text-align: center;
+        }
+
+        .emoji{
+            position: absolute;
+            top: 20%;
+            width: 100%;
+            height: 40%;
+            /* background-color: wheat; */
+        }
+
+        .emoji img{
+            width: 100%;
+            height: 100%;
+        }
+
+        .mood{
+            position: absolute;
+            bottom: 0%;
+            width: 100%;
+            height: 40%;
+            /* background-color: #790101; */
+        }
+
+        .opn{
+            display: flex;
+            position: absolute;
+            bottom: 50%;
+            left: 25%;
+        }
+
+        .opn > div{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: none;
+            margin-right: 30px;
+            font-size: 40px;
+        }
+
+        .btnR{
+            display: none;
+            position: absolute;
+            bottom: 25%;
+            left: 35%;
+            width: 100px;
+            height: 50px;
+            border-radius: 10px;
+            border: none;
+            background-color: #322525;
+            color: white;
+            font-size: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="main">
+
+        <h1>How are you feeling today?</h1>
+        <div class="emoji">
+            <img src="images-removebg-preview.png" alt="">
+        </div>
+
+        <div class="mood">
+            <div class="opn">
+                <div class="happy" >☺️</div>
+                <div class="sab" >😔</div>
+                <div class="Angry" >😡</div>
+            </div>
+            <button class="btnR">Reset</button>
+        </div>
+    </div>
+
+    <script>
+        let happy = document.querySelector(".happy");
+        let sad = document.querySelector(".sab");
+        let angry = document.querySelector('.Angry');
+        let main = document.querySelector('.main');
+
+        let h1 = document.querySelector("h1");
+        let img = document.querySelector("img");
+        let opn = document.querySelector(".opn");
+        let btnR = document.querySelector(".btnR");
+
+        happy.addEventListener("click", ()=>{
+            console.log("Happy clicked");
+            
+            h1.innerHTML = "Happy 😊";
+            img.setAttribute("src", "img1.png");
+            opn.style.display = "none";
+            btnR.style.display = "initial";
+
+            main.style.backgroundColor = "#f0e68c";
+        });
+
+        sad.addEventListener("click", ()=>{
+            console.log("Sad clicked");
+            
+            h1.innerHTML = "Sad 😔";
+            img.setAttribute("src", "img2.png");
+            opn.style.display = "none";
+            btnR.style.display = "initial";
+            main.style.backgroundColor = "#b0c4de";
+        });
+
+        angry.addEventListener("click", ()=>{
+            console.log("Angry clicked");
+            
+            h1.innerHTML = "Angry 😡";
+            img.setAttribute("src", "img3.png");
+            opn.style.display = "none";
+            btnR.style.display = "initial";
+            main.style.backgroundColor = "#ff6347";
+        });
+
+        btnR.addEventListener("click", ()=>{
+            console.log("Reset clicked");
+
+            h1.innerHTML = "How are you feeling today?";
+            img.setAttribute("src", "images-removebg-preview.png");
+            opn.style.display = "flex";
+            btnR.style.display = "none";
+            main.style.backgroundColor = "#918d8d";
+        });
+
+    </script>
+</body>
+</html>
