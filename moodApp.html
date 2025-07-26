@@ -48,7 +48,7 @@
             display: flex;
             position: absolute;
             bottom: 50%;
-            left: 25%;
+            left: 15%;
         }
 
         .opn > div{
@@ -74,6 +74,9 @@
             font-size: 20px;
         }
 
+        h2{
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -89,7 +92,9 @@
                 <div class="happy" >☺️</div>
                 <div class="sad" >😔</div>
                 <div class="Angry" >😡</div>
+                <div class="sleepy">😴</div>
             </div>
+            <h2></h2>
             <button class="btnR">Reset</button>
         </div>
     </div>
@@ -98,10 +103,12 @@
         let happy = document.querySelector(".happy");
         let sad = document.querySelector(".sad");
         let angry = document.querySelector('.Angry');
+        let sleepy = document.querySelector('.sleepy');
         let main = document.querySelector('.main');
 
         let h1 = document.querySelector("h1");
         let img = document.querySelector("img");
+        h2 = document.querySelector("h2");
         let opn = document.querySelector(".opn");
         let btnR = document.querySelector(".btnR");
 
@@ -110,6 +117,7 @@
             
             h1.innerHTML = "Happy 😊";
             img.setAttribute("src", "img1.png");
+            h2.innerHTML = "You look happy today!";
             opn.style.display = "none";
             btnR.style.display = "initial";
 
@@ -121,6 +129,8 @@
             
             h1.innerHTML = "Sad 😔";
             img.setAttribute("src", "img2.png");
+            h2.innerHTML = "Don't feel sad.";
+
             opn.style.display = "none";
             btnR.style.display = "initial";
             main.style.backgroundColor = "#b0c4de";
@@ -131,9 +141,23 @@
             
             h1.innerHTML = "Angry 😡";
             img.setAttribute("src", "img3.png");
+            h2.innerHTML = "Take a deep breath!";
+
             opn.style.display = "none";
             btnR.style.display = "initial";
             main.style.backgroundColor = "#ff6347";
+        });
+
+        sleepy.addEventListener("click", ()=>{
+            console.log("Sleepy clicked");
+            
+            h1.innerHTML = "Sleepy 😴";
+            img.setAttribute("src", "img4.png");
+            h2.innerHTML = "Feeling sleepy? Take rest!";
+
+            opn.style.display = "none";
+            btnR.style.display = "initial";
+            main.style.backgroundColor = "white";
         });
 
         btnR.addEventListener("click", ()=>{
@@ -141,6 +165,8 @@
 
             h1.innerHTML = "How are you feeling today?";
             img.setAttribute("src", "images-removebg-preview.png");
+            h2.innerHTML = "";
+
             opn.style.display = "flex";
             btnR.style.display = "none";
             main.style.backgroundColor = "#918d8d";
